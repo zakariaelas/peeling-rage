@@ -7,6 +7,9 @@ module.exports = {
         serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        dark: { raw: "(prefers-color-scheme: dark)" },
+      },
     },
   },
   variants: {},

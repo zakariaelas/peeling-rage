@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog TailwindCSS`,
-    author: `Kyle Mathews`,
+    title: `Peeling Rage`,
+    author: {
+      name: `Zakaria El Asri`,
+      summary: `who enjoys learning by documenting his understanding of things.`,
+    },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-tailwindcss-demo.netlify.com/`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `zakariaelas`,
+      github: `zakariaelas`,
+      linkedin: `zakaria elasri`,
     },
   },
   plugins: [
@@ -39,7 +44,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: { js: "javascript" },
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -57,11 +67,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Peeling Rage`,
+        short_name: `Peeling Rage`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#434190`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
@@ -75,5 +85,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-dark-mode`,
   ],
 }

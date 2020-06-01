@@ -38,20 +38,11 @@ class BlogPostTemplate extends React.Component {
         </article>
 
         <nav>
-          <ul
-            className="flex flex-wrap justify-between mb-8"
-            // style={{
-            //   display: `flex`,
-            //   flexWrap: `wrap`,
-            //   justifyContent: `space-between`,
-            //   listStyle: `none`,
-            //   padding: 0,
-            // }}
-          >
+          <ul className="flex flex-wrap justify-between mb-8">
             <li>
               {previous && (
                 <Link
-                  className="text-blue-600"
+                  className="text-indigo-600"
                   to={previous.fields.slug}
                   rel="prev"
                 >
@@ -62,7 +53,7 @@ class BlogPostTemplate extends React.Component {
             <li>
               {next && (
                 <Link
-                  className="text-blue-600"
+                  className="text-indigo-600"
                   to={next.fields.slug}
                   rel="next"
                 >

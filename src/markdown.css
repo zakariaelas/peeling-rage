@@ -1,3 +1,25 @@
+body {
+  --bg: white;
+  --textNormal: #222;
+  --textTitle: #222;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+  transition: 0.3s;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #10192e;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: white;
+  --textLink: yellow;
+  --hr: hsla(0, 0%, 100%, 0.2);
+}
+
 .markdown > h2 {
   @apply text-3xl font-black mt-16 mb-8;
 }
@@ -17,25 +39,51 @@
 .markdown > h6 {
   @apply text-xs font-black mt-16 mb-8;
 }
-
-.markdown a {
-  @apply text-blue-600;
+/*
+@media only screen and (max-width: 480px) ul, ol {
+  margin-left: 1.75rem !important;
 }
 
+@media only screen and (max-width: 480px) blockquote {
+  margin-left: -1.3125rem !important;
+  margin-right: 0 !important;
+  padding-left: 0.98438rem !important;
+} */
+
+.markdown a {
+  @apply text-indigo-600;
+}
 
 .markdown > p {
-  @apply mb-8;
+  @apply mb-8 leading-relaxed;
 }
 
 .markdown > blockquote {
   @apply -ml-8 mb-8;
 }
 
+.dark .markdown > blockquote > p {
+  @apply text-gray-500;
+}
+
+.dark .markdown > blockquote {
+  @apply border-gray-500;
+}
+
 .markdown ul {
-  @apply list-disc mb-8;
+  @apply list-disc mb-8 ml-8;
 }
 
 .markdown ol {
-  @apply list-decimal mb-8;
+  @apply list-decimal mb-8 ml-8;
 }
 
+@media (max-width: 480px) {
+  .markdown > ul,
+  .markdown > ol {
+    @apply ml-8;
+  }
+  .markdown > blockquote {
+    @apply -ml-5 mr-0 pl-4;
+  }
+}
