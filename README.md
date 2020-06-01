@@ -10,7 +10,7 @@ I usually enjoy unraveling abstractions, and more often that not, I find myself 
 
 ## Technologies
 
-I have also used this little project as an opportunity to get exposed to [GatsbyJS](https://www.gatsbyjs.org/) and learn some more about it.
+I have also used this little project as an opportunity to get exposed to [GatsbyJS](https://www.gatsbyjs.org/) and learn some more about it. For the same reasons, I have also used [tailwindcss](https://tailwindcss.com/) as a css framework after having used [Material-Ui](https://material-ui.com/) for the majority of my projects.
 
 ## Credits
 
