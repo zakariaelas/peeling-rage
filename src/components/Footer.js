@@ -1,6 +1,9 @@
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -8,7 +11,7 @@ const Footer = () => {
       <div className="py-2 text-sm text-center">
         © 2020 •
         <a className="shadow-none" href="https://www.gatsbyjs.org">
-          {" "}
+          {' '}
           Built with Gatsby
         </a>
       </div>
@@ -29,7 +32,7 @@ const Footer = () => {
         </a>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

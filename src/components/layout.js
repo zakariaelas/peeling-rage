@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
-import EmojiToggler from "./EmojiToggler"
-import Footer from "./Footer"
+import React from 'react';
+import { Link } from 'gatsby';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import EmojiToggler from './EmojiToggler';
+import Footer from './Footer';
 
 const Layout = ({ title, children }) => {
   //const rootPath = `${__PATH_PREFIX__}/`
@@ -16,7 +16,10 @@ const Layout = ({ title, children }) => {
         </h1>
         <ul className="flex justify-end bg-transparent text-xl items-center">
           <li className="shadow-none lg:text-base text-sm text-indigo-700 hover:text-indigo-600 mb-0 mr-4">
-            <Link className="shadow-none font-black font-sans" to={"/about"}>
+            <Link
+              className="shadow-none font-black font-sans"
+              to={'/about'}
+            >
               About
             </Link>
           </li>
@@ -26,7 +29,7 @@ const Layout = ({ title, children }) => {
       <main>{children}</main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
