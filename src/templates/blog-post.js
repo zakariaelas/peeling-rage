@@ -1,71 +1,68 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
+const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const post = data.markdownRemark;
+  const { title } = data.site.siteMetadata;
+  const { previous, next } = pageContext;
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
+  return (
+    <Layout title={title}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <article>
+        <header>
+          <h1 className="text-5xl font-black mt-8 mb-0">
+            {post.frontmatter.title}
+          </h1>
+          <p className="text-sm leading-loose mb-8 ">
+            {post.frontmatter.date}
+          </p>
+        </header>
+        <section
+          className="markdown"
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <article>
-          <header>
-            <h1 className="text-5xl font-black mt-8 mb-0">
-              {post.frontmatter.title}
-            </h1>
-            <p className="text-sm leading-loose mb-8 ">
-              {post.frontmatter.date}
-            </p>
-          </header>
-          <section
-            className="markdown"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-          <hr className="h-px mb-8" />
-          <footer>
-            <Bio />
-          </footer>
-        </article>
+        <hr className="h-px mb-8" />
+        <footer>
+          <Bio />
+        </footer>
+      </article>
 
-        <nav>
-          <ul className="flex flex-wrap justify-between mb-8">
-            <li>
-              {previous && (
-                <Link
-                  className="text-indigo-600"
-                  to={previous.fields.slug}
-                  rel="prev"
-                >
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link
-                  className="text-indigo-600"
-                  to={next.fields.slug}
-                  rel="next"
-                >
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </Layout>
-    );
-  }
-}
+      <nav>
+        <ul className="flex flex-wrap justify-between mb-8">
+          <li>
+            {previous && (
+              <Link
+                className="text-indigo-600"
+                to={previous.fields.slug}
+                rel="prev"
+              >
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link
+                className="text-indigo-600"
+                to={next.fields.slug}
+                rel="next"
+              >
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </Layout>
+  );
+};
 
 export default BlogPostTemplate;
 
