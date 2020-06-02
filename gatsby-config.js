@@ -8,9 +8,8 @@ module.exports = {
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `zakariaelas`,
-      github: `zakariaelas`,
-      linkedin: `zakaria elasri`,
+      github: `https://github.com/zakariaelas`,
+      linkedin: `https://www.linkedin.com/in/zakaria-el-asri-850197169/`,
     },
   },
   plugins: [
@@ -47,7 +46,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              aliases: { js: "javascript" },
+              aliases: { js: 'javascript' },
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -87,4 +86,4 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-dark-mode`,
   ],
-}
+};

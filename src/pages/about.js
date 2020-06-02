@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -55,8 +55,8 @@ const About = ({ data, location }) => {
           <div className="flex justify-center items-center">
             <a
               target="__blank"
-              href="https://github.com/zakariaelas"
-              className="shadow-none"
+              href={social.github}
+              className="shadow-none hover:text-indigo-600"
             >
               <FontAwesomeIcon
                 className="ml-3 text-3xl"
@@ -64,9 +64,9 @@ const About = ({ data, location }) => {
               />
             </a>
             <a
-              className="shadow-none hover:text-indigo-800"
+              className="shadow-none hover:text-indigo-600"
               target="__blank"
-              href="https://www.linkedin.com/in/zakaria-el-asri-850197169/"
+              href={social.linkedin}
             >
               <FontAwesomeIcon
                 className="ml-3 text-3xl"
