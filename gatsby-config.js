@@ -85,5 +85,11 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-dark-mode`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-177842061-1',
+      },
+    },
   ],
 };
