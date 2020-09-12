@@ -10,13 +10,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { title } = data.site.siteMetadata;
   const { previous, next, slug } = pageContext;
   const disqusConfig = {
-    shortname: process.env.GASTBY_SHORT_NAME,
+    shortname: process.env.GASTBY_DISQUS_NAME,
     config: {
       identifier: slug,
       title,
     },
   };
-
   return (
     <Layout title={title}>
       <SEO
