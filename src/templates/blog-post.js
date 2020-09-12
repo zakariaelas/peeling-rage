@@ -9,13 +9,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const { title } = data.site.siteMetadata;
   const { previous, next, slug } = pageContext;
+  console.log('process', process.env.GATSBY_DISQUS_NAME);
   const disqusConfig = {
-    shortname: process.env.GASTBY_DISQUS_NAME,
+    shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
       identifier: slug,
       title,
     },
   };
+  console.log(disqusConfig);
   return (
     <Layout title={title}>
       <SEO
