@@ -3,7 +3,7 @@ module.exports = {
     title: `Peeling Rage`,
     author: {
       name: `Zakaria El Asri`,
-      summary: `who is really bad at talking about himself in the 3rd person`,
+      summary: ``,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
