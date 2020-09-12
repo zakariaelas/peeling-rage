@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
               <header>
                 <h3 className="text-2xl font-black mt-16 mb-2">
                   <Link
-                    className="text-indigo-700 shadow-none"
+                    className="text-indigo-600 shadow-none"
                     to={node.fields.slug}
                   >
                     {title}

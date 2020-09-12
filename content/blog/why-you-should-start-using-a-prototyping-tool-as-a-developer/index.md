@@ -71,4 +71,6 @@ As a conclusion, I hope I have convinced you in trying out Figma or any other pr
 
 I understand that this is a bit far from pure coding and might not be within your comfort zone. However, I believe that as long as it makes your product better, then it should not hurt to invest some time in learning it. I believe it will pay dividends over time.
 
+Also, it is always great to keep an open mind about different technologies. Who knows? You might try Figma out and realize you actually have a passion about web design.
+
 Feel free to get in touch with me to further discuss this, or suggest better reasons why developers should be using a prototyping tool.

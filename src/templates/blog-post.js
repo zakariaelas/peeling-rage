@@ -3,11 +3,19 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { DiscussionEmbed } from 'disqus-react';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const { title } = data.site.siteMetadata;
-  const { previous, next } = pageContext;
+  const { previous, next, slug } = pageContext;
+  const disqusConfig = {
+    shortname: process.env.GASTBY_SHORT_NAME,
+    config: {
+      identifier: slug,
+      title,
+    },
+  };
 
   return (
     <Layout title={title}>
@@ -60,6 +68,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   );
 };
