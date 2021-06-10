@@ -1,7 +1,7 @@
 ---
 title: Why you should start using a prototyping tool as a developer
 date: '2020-09-12'
-description: A couple of reasons why you should give Figma a try as a developer to boost your creativity
+description: A couple of reasons why you should give Figma a try as a developer to boost your productivity
 ---
 
 You've got this brilliant idea for a web/mobile app that you want to work on as a side-project. You have meticulously thought about the architecture, data models, algorithms, and technologies you want to use, but when you think about your app's interface, nothing comes to mind or things are just blurry.
