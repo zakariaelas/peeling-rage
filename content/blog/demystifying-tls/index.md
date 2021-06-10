@@ -37,17 +37,18 @@ TLS or SSL is the protocol. The certificate is just a means to prove the authent
 
 One of the first descriptions of TLS you'll come across is: "TLS is a layered protocol". The first (lower) layer is for the Record Protocol. The second (upper) layer is for one of the following 4 protocols: the handshake protocol, the alert protocol, the change cipher spec protocol, the heartbeat protocol and the application data protocol. 
 
-The Record Protocol, by being the lower layer, abstracts some functionality from the upper layer. It's quite similar to how IP provides a service (e.g. routing, addressing) for TCP and UDP. In the context of TLS, the Record Protocol can fragment, apply a MAC, encrypt, or/and optionally compress data, etc. At the receiving end, it can reassemble, verify, decrypt, or/and optionally decompress data, etc. 
-
-The point is that this layered approach abstracts behavior and provides services to the upper layer. The motivation behind this layered approach is similar to what you might be familiar with in the case of the TCP/IP and OSI models: modularity, decoupling, re-use, etc.
+The Record Protocol, by being the lower layer, abstracts some functionality from the upper layer. It's quite similar to how IP provides a service (e.g. routing, addressing) for TCP and UDP. In the context of TLS, the Record Protocol can fragment, apply a MAC, encrypt, or/and optionally compress data. At the receiving end, it can reassemble, verify, decrypt, or/and optionally decompress data. 
 
 The upper layer protocols are used for different purposes, mainly, negotiating encryption algorithms/secrets and providing some error control. 
 
+The layered approach abstracts behavior and provides services to the upper layer. The motivation behind this layered approach is similar to what you might be familiar with in the case of the TCP/IP and OSI models: modularity, decoupling, re-use, etc.
+
+
 ## Terminology
 
-Before talking more detail, I want to introduce some terminology. It will help reduce your *wtf* moments. 
+Before talking more detail, I want to introduce some terminology. I think it will help in our discussion and in case you read other more technical articles.
 
-TLS, as a protocol, exchanges messages and in the context of TLS, we usually call those **records**. Each record contains a specific set of common fields + some other fields depending on what is used in the upper layer (either handshake, change cipher spec, alert, or application data). These "other fields" depend mainly on the value of the content type field (which is found in all TLS records). Below is a representation of a TLS record. 
+TLS, as a protocol, exchanges messages and in the context of TLS, we usually call those **records**. Each record contains a specific set of common fields + some other fields depending on what is used in the upper layer. These "other fields" depend mainly on the value of the content type field (which is found in all TLS records). Below is a representation of a TLS record. 
 
 ![TLS record general format](../../assets/demystifying-tls/tls_record_general.png)
 
@@ -125,7 +126,7 @@ This is the beginning of a new phase, the client key exchange phase. The client 
 
 At this level, both the client and server have enough information to generate session keys. The server random, client random, and premaster secret will be used to generate the session keys. 
 
-### Step 7: CipherSpecMessage
+### Step 7: Change Cipher Spec Message
 
 This message is sent to instruct the server that subsequent TLS records will use another encryption mode. In this case, we switch from asymmetric to symmetric encryption.
 
