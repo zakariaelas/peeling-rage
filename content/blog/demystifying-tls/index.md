@@ -35,7 +35,7 @@ TLS or SSL is the protocol. The certificate is just a means to prove the authent
 
 ### The TLS Protocol
 
-One of the first descriptions of TLS you'll come across is: "TLS is a layered protocol". The first (lower) layer is for the Record Protocol. The second (upper) layer is for one of the following 4 protocols: the handshake protocol, the alert protocol, the change cipher spec protocol, the heartbeat protocol and the application data protocol. 
+One of the first descriptions of TLS you'll come across is: "TLS is a layered protocol". It is comprised of 2 layers. The first (lower) layer is for the Record Protocol. The second (upper) layer is for one of the following 4 protocols: the handshake protocol, the alert protocol, the change cipher spec protocol, the heartbeat protocol and the application data protocol. 
 
 The Record Protocol, by being the lower layer, abstracts some functionality from the upper layer. It's quite similar to how IP provides a service (e.g. routing, addressing) for TCP and UDP. In the context of TLS, the Record Protocol can fragment, apply a MAC, encrypt, or/and optionally compress data. At the receiving end, it can reassemble, verify, decrypt, or/and optionally decompress data. 
 
